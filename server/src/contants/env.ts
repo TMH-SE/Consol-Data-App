@@ -1,0 +1,1 @@
+export const MONGO_URI = "mongodb+srv://sa:sapassword@ocsen-ujacg.mongodb.net/consoldb?retryWrites=true"
