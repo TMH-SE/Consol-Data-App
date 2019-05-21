@@ -6,7 +6,7 @@ type Company {
   email: String,
   skype: String,
   note: String,
-  status: Boolean
+  status: Int
 }
 
 type Query {
@@ -27,7 +27,7 @@ input AddCompanyDto {
   email: String,
   skype: String,
   note: String,
-  status: Boolean
+  status: Int
 }
 
 input UpdateCompanyDto {
@@ -38,5 +38,5 @@ input UpdateCompanyDto {
   email: String,
   skype: String,
   note: String,
-  status: Boolean
+  status: Int
 }

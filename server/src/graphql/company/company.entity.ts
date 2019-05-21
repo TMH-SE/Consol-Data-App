@@ -25,6 +25,6 @@ export class Company {
   note: string
 
   @Column()
-  status: boolean
+  status: number
 
 }

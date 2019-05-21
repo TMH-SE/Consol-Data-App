@@ -12,7 +12,7 @@ export class AddCompanyDto {
     email?: string;
     skype?: string;
     note?: string;
-    status?: boolean;
+    status?: number;
 }
 
 export class UpdateCompanyDto {
@@ -23,7 +23,7 @@ export class UpdateCompanyDto {
     email?: string;
     skype?: string;
     note?: string;
-    status?: boolean;
+    status?: number;
 }
 
 export class Company {
@@ -34,7 +34,7 @@ export class Company {
     email?: string;
     skype?: string;
     note?: string;
-    status?: boolean;
+    status?: number;
 }
 
 export abstract class IMutation {
