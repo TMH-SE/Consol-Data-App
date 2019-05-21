@@ -15,6 +15,23 @@ export class AddCompanyDto {
     status?: number;
 }
 
+export class ChangePasswordInfoDto {
+    id: string;
+    oldPwd: string;
+    newPwd: string;
+}
+
+export class CreateUserInfoDto {
+    name: string;
+    username: string;
+    password: string;
+}
+
+export class LoginInfoDto {
+    username: string;
+    password: string;
+}
+
 export class UpdateCompanyDto {
     id: string;
     name?: string;
@@ -24,6 +41,11 @@ export class UpdateCompanyDto {
     skype?: string;
     note?: string;
     status?: number;
+}
+
+export class Auth {
+    token?: string;
+    id?: string;
 }
 
 export class Company {
@@ -43,10 +65,25 @@ export abstract class IMutation {
     abstract updateCompany(updateCompanyDto?: UpdateCompanyDto): Company | Promise<Company>;
 
     abstract deleteCompany(companyId?: string): Company | Promise<Company>;
+
+    abstract createUser(userInfo?: CreateUserInfoDto): User | Promise<User>;
+
+    abstract updatePassword(changePasswordInfo?: ChangePasswordInfoDto): boolean | Promise<boolean>;
 }
 
 export abstract class IQuery {
     abstract companies(): Company[] | Promise<Company[]>;
 
     abstract company(id: string): Company | Promise<Company>;
+
+    abstract user(id: string): User | Promise<User>;
+
+    abstract login(loginInfo?: LoginInfoDto): Auth | Promise<Auth>;
+}
+
+export class User {
+    id?: string;
+    name?: string;
+    username?: string;
+    password?: string;
 }
